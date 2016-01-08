@@ -1,0 +1,32 @@
+<html>
+
+
+<head>
+	<title>Sidra's Notetaking</title>
+</head>
+
+<body>
+
+{% if username %}
+<h1> YO! Hi there, {{  username  }}</h1>
+{% else %}
+<h1> Hi there, bro.</h1>
+{% endif %}
+
+
+<br><br>
+
+<h2>Here are your notes:</h2>
+
+{% if note_titles %}
+<ul>
+	{% for title in note_titles %}
+		<a href='/notes/{{title}}.html'><li>{{ title }}</li></a>
+	{% endfor %}
+</ul>
+{% endif %}
+
+</body>
+
+
+</html>
