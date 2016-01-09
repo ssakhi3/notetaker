@@ -1,0 +1,35 @@
+{
+
+"title": "Chemistry Notes",
+"date_created": ISODate("2014-11-10"),
+"date_modified": ISODate("2014-11-12"), 
+"content": "I have the 9AM class.",
+"userId": 1234,
+"noteId": 456
+
+}
+
+
+{
+
+"title": "My name jeff",
+"date_created": ISODate("2015-10-11"),
+"date_modified": ISODate("2015-10-13"),
+"content": "jeffityjeffityjeff",
+"userId": 1234,
+"noteId": 178
+
+}
+
+
+{
+"title": "English 1101",
+"date_created": ISODate("2015-12-1"),
+"date_modified": ISODate("2015-12-5"),
+"content": "This is my English.",
+"userId": 1235,
+"noteId": 145
+
+
+
+}
