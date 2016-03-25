@@ -2,4 +2,4 @@
 from pymongo import MongoClient
 
 
-connection = MongoClient()['notetaker']
+db = MongoClient()['notetaker']
