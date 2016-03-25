@@ -7,21 +7,14 @@
 
 <body>
 
-{% if userId %}
-<h1> YO! Hi there, {{  userId  }}</h1>
-{% else %}
-<h1> Hi there, bro.</h1>
-{% endif %}
+<h1>Here are your notes:</h1>
 
-
-<br><br>
-
-<h2>Here are your notes:</h2>
-
-{% if note_titles %}
+{% if titles %}
 <ul>
-	{% for title in note_titles %}
-		<a href='/notes/{{title}}.html'><li>{{ title }}</li></a>
+	{% for title in titles %}
+	{% set noteId = noteIds[loop.index0] %}
+		<a href='/notes/{{ noteId }}'><li>{{ title }}</li></a>
+	
 	{% endfor %}
 </ul>
 {% endif %}

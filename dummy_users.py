@@ -3,7 +3,7 @@ from user import User
 fname = 'Osama'
 lname = 'Sakhi'
 email = 'msakhi21@gmail'
-password = 'lucky7'
+password = 'lucy70'
 userid = 1234
 
 print 'fname: {}'.format(fname)

@@ -1,3 +1,4 @@
+[
 {
 
 "title": "Chemistry Notes",
@@ -7,9 +8,7 @@
 "userId": 1234,
 "noteId": 456
 
-}
-
-
+},
 {
 
 "title": "My name jeff",
@@ -19,9 +18,7 @@
 "userId": 1234,
 "noteId": 178
 
-}
-
-
+},
 {
 "title": "English 1101",
 "date_created": ISODate("2015-12-01"),
@@ -29,7 +26,5 @@
 "content": "This is my English.",
 "userId": 1235,
 "noteId": 145
-
-
-
 }
+]

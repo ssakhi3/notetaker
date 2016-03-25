@@ -7,15 +7,15 @@ class Note(object):
 		if not all([title, content, userId]):
 			raise ValueError
 
-		self.title = title
-		self.content = content
-		self.userId = userId
-		self.noteId = noteId
+		self.title = str(title)
+		self.content = str(content)
+		self.userId = int(userId)
+		self.noteId = int(noteId)
 
 		self.date_created = date_created
 		self.date_modified = date_modified
 
-	def create_json(self): 
+	def to_json(self): 
 		mynote = dict()
 		mynote["title"] = sef.title
 		mynote["content"] = self.content
@@ -28,7 +28,7 @@ class Note(object):
 		return mynote
 
 	@classmethod
-	def read_json(constructor, mynote):
+	def from_json(constructor, mynote):
 		title = mynote.get("title")
 		content = mynote.get("content")
 		userId = mynote.get("userId")
