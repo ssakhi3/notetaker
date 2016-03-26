@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 
@@ -10,7 +11,26 @@
 {% if userId %}
 <h1> YO! Hi there, {{  userId  }}</h1>
 {% else %}
-<h1> Hi there, bro.</h1>
+<h1> Hello there! Create a FREE account here!</h1> 
+<form action="">
+First name:<br>
+<input type="text" name="fname">
+<br>
+Last name:<br>
+<input type="text" name="lname">
+<br>
+Username: <br>
+<input type="text" name="username">
+<br>
+Password: <br>
+<input type="text" name="password">
+<br>
+Email:<br>
+<input type="text" name="email">
+<br> <br>
+
+<input type="submit">
+</form>
 {% endif %}
 </body>
 

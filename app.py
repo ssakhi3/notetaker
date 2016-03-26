@@ -5,12 +5,9 @@ from note import Note
 app = Flask('MyApp')
 
 @app.route('/')
-@app.route('/index')
-@app.route('/hello')
-@app.route('/hello/<userId>')
-@app.route('/hello/<userId>/<note_titles>')
-def hello(userId=None, content = None):
-	return render_template('signup.html', userId=userId, content=content)
+@app.route('/signup')
+def signup():
+	return render_template('signup.html')
 
 #if note id, find single note
 # if no note id, find all notes
@@ -18,8 +15,6 @@ def hello(userId=None, content = None):
 @app.route('/notes/<int:noteId>')
 @app.route('/notes/')
 def show_notes(noteId=None):
-	#note_titles = ['Chem 1212', 'PHYS 2211', 'CS 1331', 'ENGL 1102']
-	#content= ["Enter content here"]
 	if noteId:
 		notes = (list(db.notes.find({'noteId': noteId})))
 		print notes
@@ -30,7 +25,7 @@ def show_notes(noteId=None):
 			return render_template('show_note.html', title=note_title, content=content)
 
 		# Go somewhere else
-		return hello()
+		return signup()
 	else:
 		notesJson = list(db.notes.find({}))
 		notes = map(Note.from_json, notesJson)
