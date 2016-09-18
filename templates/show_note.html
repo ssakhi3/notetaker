@@ -8,13 +8,70 @@
 <body>
 
 {% if title %}
-<h1>{{ title }}</h1>
+<!-- <h1>{{ title }}</h1>
 <ul>
 	{{content}}
 </ul>
+ -->
+
+<form=>
+  Title:<br>
+  <input type="text" id="title" value="{{title}}"><br>
+  
+  Content:<br>
+  <textarea id="content" rows="5" cols="80">{{content}}</textarea>
+  <br>
+</form>
+
+<button type="button" onclick="postData()">Submit</button> <br>
 {% endif %}
 
 </body>
 
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery.js')}}"></script>
+<script type="text/javascript">
+	
+	var postData = function() {
+
+		var title = $('#title')[0].value;
+	    var content = $('#content')[0].value;
+	    var noteId = '{{noteId}}';
+
+	    var formData = {
+	        'title': title,
+	        'content': content,
+	        'noteId': noteId,
+	    };
+	    var data = JSON.stringify(formData);
+
+	    /* Make AJAX HTTP Post Reuqest */
+	    /*
+	    * If successful, redirect user
+	    * If unsuccessful, show message on the page form
+	    */
+	    var posting = $.post({
+	        url: "{{url_for('update_note')}}",
+	        data: data,
+	        success: function(response) {
+	            console.log("POSTed");
+	            if (response) {
+	                if (response.success) {
+	                	alert("success")
+	                } else {
+	                	alert("Something went wrong.")
+	                }
+	            }
+	        },
+	        error: function(data, err) {
+	            console.log("POST error");
+	        },
+
+	        dataType: "json",
+	        contentType : "application/json;charset=UTF-8",
+	    });
+	};
+
+
+</script>
 
 </html>
