@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from dbco import db
 from note import Note
 import json
+import os
 
 app = Flask('MyApp')
 
@@ -69,4 +70,4 @@ def new_note():
 
 
 app.debug = True
-app.run(port=8080)
+app.run(host=os.getenv('IP', '0.0.0.0'), port=os.getenv("PORT", 8080))
